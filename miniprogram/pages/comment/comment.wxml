@@ -1,0 +1,28 @@
+<view class="detail-container">
+    <view class="detail-banner" style="background:url({{detail.src}}) no-repeat top/cover"></view>
+    <view class="detail-mask"></view>
+    <view class="detail-info">
+        <image src="{{detail.src}}" class="detail-img"></image>
+        <view class="detail-desc">
+            <view class="detail-title">{{detail.name}}</view>
+            <view>
+                观众评分：
+                <van-rate value="{{ detail.score }}" touchable="true" size="{{ 16 }}" void-icon="star"
+    void-color="#eee" color="#ffd21e" bind:change="onChangeScore"/>
+            </view>
+            <view class="detail-text">{{detail.desc}}</view>
+        </view>
+    </view>
+    <view class="detail-comment">
+        <van-field
+            model:value="{{ content }}"
+            placeholder="写一些评价吧"
+            type="textarea"
+            autosize
+            bind:change="onContentChange"
+        />
+        <view class="imgShow">图片展示:</view>
+        <van-uploader class="upload" multiple="true" deletable="{{true}}" file-list="{{ fileList }}" bind:after-read="upload"  max-count="3"/>
+        <van-button type="info" size="medium" bindtap="submit" block class="submit">提交评价</van-button>
+    </view>
+</view>

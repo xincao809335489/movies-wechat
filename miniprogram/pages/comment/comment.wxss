@@ -1,0 +1,65 @@
+.detail-container{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+.detail-banner{
+    width: 100%;
+    height:440rpx;
+    filter:blur(40rpx);
+    opacity: 0.4;
+}
+.detail-mask{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    width:100%;
+    height:440rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(110, 109, 109);
+}
+.detail-info{
+    width:calc(100% - 44rpx);
+    position: absolute;
+    left: 22rpx;
+    top: 22rpx;
+    font-size: 28rpx;
+    color: aliceblue;
+}
+.detail-desc{
+    line-height: 1.7;
+}
+.detail-img{
+    width:200rpx;
+    height:200rpx;
+    margin-right:20rpx;
+}
+.detail-text{
+    overflow: hidden;
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.detail-comment{
+    margin-top: 22rpx;
+    padding:19rpx;
+    font-size: 28rpx;
+}
+.imgShow{
+    margin:19rpx 0;
+}
+.detail-container .van-uploader__upload{
+    background-color: #fff;
+}
+.submit{
+    position: absolute;
+    bottom: 51rpx;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+}

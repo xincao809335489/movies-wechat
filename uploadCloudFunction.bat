@@ -1,0 +1,1 @@
+"D:\Program Files (x86)\Tencent\wechat\cli.bat" cloud functions deploy --e cloud1-9guluxww93610a05 --n quickstartFunctions --r --project "D:\WeChatProjects\miniprogram-movie" --report_first --report

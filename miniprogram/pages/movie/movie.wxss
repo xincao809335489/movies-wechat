@@ -1,0 +1,29 @@
+.movie-container{
+    display:flex;
+    padding:10px;
+    border-bottom: 1px solid #ccc;
+}
+.movie-img{
+    width:220rpx;
+    height:160rpx;
+    margin-right:20rpx;
+}
+.movie-info{
+    width:98%;
+    margin:0 auto;
+    color:#666;
+    font-size:22rpx;
+    line-height: 1.7;
+}
+.movie-title{
+    font-weight: bold;
+    font-size:28rpx;
+}
+.movie-score{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.movie-score .van-rate__item{
+    padding:0;
+}
