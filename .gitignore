@@ -2,7 +2,7 @@
 [Dd]esktop.ini
 Thumbs.db
 $RECYCLE.BIN/
-
+*package-lock.json
 # macOS
 .DS_Store
 .fseventsd
