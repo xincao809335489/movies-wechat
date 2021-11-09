@@ -7,10 +7,13 @@ Page({
     data: {
         content:'',
         detail:'',
-        fileList:[]
+        fileList:[],
+        curImgLen:0,
+        _id:0
     },
     
-    getMoviesDetail:function(name){
+    getMoviesDetail(name){
+        const _this = this;
         wx.cloud.callFunction({
             name:'moviedetail',
             data:{
@@ -22,17 +25,34 @@ Page({
                 detail:res.result.obj,
                 content:content?content:''
             })
+            //获取数据库中缩略图
+            this.getImages(name)
+        }).catch(err=>{
+            console.log(err)
+        })
+    },
+    getImages:function(name){
+        db.collection('comment').where({
+            name
+        }).get().then(res=>{
+            this.setData({
+                fileList:res.data[0].fileList
+            });
+            
         }).catch(err=>{
             console.log(err)
         })
     },
     submit:function(){
-        const {content,fileList,detail} = this.data
+        const {content,fileList,detail,curImgLen} = this.data
         const _this = this
         if(!fileList.length) return wx.showToast({
           title: '请选择至少一张照片',
           icon:'none'
         })
+        if(fileList.length===curImgLen){
+            return;
+        }
         wx.showLoading({
           title: '提交中',
         })
@@ -54,29 +74,60 @@ Page({
             }))
         });
         Promise.all(promiseArr).then(res => {
-            db.collection('comment').add({
+            wx.cloud.callFunction({
+                name:'updateMemory',
                 data:{
-                    name:detail.name,
-                    content:content,
-                    score:detail.score,
-                    fileList:fileList,
-                    fileIds:res
+                    name:detail.name
                 }
-            }).then(()=>{
+            }).then(ret=>{
                 wx.hideLoading();
-                wx.showToast({
-                  title: '提交成功',
-                });
+                if(ret.result.data && ret.result.data.length){
+                    //更新对应数据库
+                    db.collection('comment').where({
+                        name:detail.name
+                    }).update({
+                        data:{
+                            content,
+                            score:detail.score,
+                            fileList,
+                            fileIds:res
+                        }
+                    })
+                    wx.showToast({
+                        title: '提交成功',
+                    });
+                }else{
+                    //添加到数据库
+                    _this.addComment(res)
+                }
                 //更新数据库
                 _this.updateLists()
             }).catch(err=>{
-                wx.hideLoading();
-                wx.showToast({
-                  title:err,
-                })
+                console.log(err)
             })
         })
 
+    },
+    addComment(data){
+        const {content,fileList,detail} = this.data
+        db.collection('comment').add({
+            data:{
+                name:detail.name,
+                content:content,
+                score:detail.score,
+                fileList:fileList,
+                fileIds:data
+            }
+        }).then(()=>{
+            wx.showToast({
+              title: '提交成功',
+            });
+        }).catch(err=>{
+            wx.hideLoading();
+            wx.showToast({
+              title:err,
+            })
+        })
     },
     updateLists:function(){
         const {name,score} = this.data.detail
@@ -95,7 +146,11 @@ Page({
         })
     },
     upload:function(event){
+        const {fileList} = this.data;
         const {file} = event.detail;
+        this.setData({
+            curImgLen:fileList.length
+        })
         let imgs = file.map(item=>{
             return {
                 thumb:item.thumb,
@@ -103,7 +158,7 @@ Page({
             }
         })
         this.setData({
-            fileList:this.data.fileList.concat(imgs)
+            fileList:fileList.concat(imgs)
         })
     },
     onChangeScore:function(event){

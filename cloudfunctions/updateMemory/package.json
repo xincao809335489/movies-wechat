@@ -1,5 +1,5 @@
 {
-    "name": "updateList",
+    "name": "updateSave",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -9,7 +9,6 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "axios": "^0.21.1",
         "wx-server-sdk": "^2.5.3"
     }
 }

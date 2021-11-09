@@ -14,9 +14,6 @@ Page({
      * 获取列表
      */
     getMovieList:function(){
-        wx.showLoading({
-          title: '加载中',
-        })
         wx.cloud.callFunction({
             name:'movielist',
             data:{
@@ -46,6 +43,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        wx.showLoading({
+            title: '加载中',
+          })
         //获取电影列表数据
         this.getMovieList();
     },
