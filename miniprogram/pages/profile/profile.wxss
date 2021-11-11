@@ -1,1 +1,49 @@
-/* pages/profile/profile.wxss */
+.container{
+    background: #eee;
+    background-size: cover;
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+}
+.header-info{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.avatar{
+    width:136rpx;
+    height:136rpx;
+    border-radius: 50%;
+    overflow:hidden;
+    margin-top: 50rpx;
+}
+.name{
+    margin-top:20rpx;
+}
+.section{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+.item{
+    display: flex;
+    width:200rpx;
+    height:72rpx;
+    line-height: 72rpx;
+    padding:10rpx 30rpx;
+    margin:40rpx auto 0;
+    font-size:28rpx;
+    box-sizing: border-box;
+    border-radius: 5%;
+    background: rgba(255,255,255,.5);
+}
+.icon{
+    width:50rpx;
+    height:50rpx;
+}
+.pay-text {
+    line-height: 25px;
+    margin-left: 5px;
+}

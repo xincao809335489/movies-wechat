@@ -1,31 +1,44 @@
 {
-  "pages": [
-    "pages/movie/movie",
-    "pages/profile/profile",
-    "pages/comment/comment"
-  ],
-  "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#1296db",
-    "navigationBarTitleText": "最新电影",
-    "navigationBarTextStyle": "white"
-  },
-  "tabBar": {
-    "color": "#000000",
-    "selectedColor": "#1296db",
-    "list": [{
-      "pagePath": "pages/movie/movie",
-      "text": "电影",
-      "iconPath": "images/film.png",
-      "selectedIconPath": "images/film-actived.png"
+    "pages": [
+        "pages/index/index",
+        "pages/movie/movie",
+        "pages/profile/profile",
+        "pages/comment/comment",
+        "pages/pay/pay"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "电影",
+        "enablePullDownRefresh": true
     },
-    {
-      "pagePath": "pages/profile/profile",
-      "text": "我的",
-      "iconPath": "images/profile.png",
-      "selectedIconPath": "images/profile-actived.png"
-    }]
-  },
-  "sitemapLocation": "sitemap.json"
+    "tabBar": {
+        "color": "#333",
+        "backgroundColor": "rgba(0,0,0,0.90)",
+        "borderStyle": "black",
+        "selectedColor": "#3488D7",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/home.png",
+                "selectedIconPath": "images/home-actived.png"
+            },
+            {
+                "pagePath": "pages/movie/movie",
+                "text": "电影",
+                "iconPath": "images/film.png",
+                "selectedIconPath": "images/film-actived.png"
+            },
+            {
+                "pagePath": "pages/profile/profile",
+                "text": "我的",
+                "iconPath": "images/profile.png",
+                "selectedIconPath": "images/profile-actived.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
 }

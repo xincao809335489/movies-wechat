@@ -1,0 +1,10 @@
+.swiper,.slide-image{
+    width:100%;
+    height:340rpx;
+}
+.section{
+    width:100%;
+}
+.movie-item{
+    
+}

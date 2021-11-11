@@ -63,3 +63,6 @@
     width: 80%;
     transform: translateX(-50%);
 }
+.van-image__img{
+    object-fit: fill !important;
+}

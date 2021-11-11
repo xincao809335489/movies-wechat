@@ -1,4 +1,4 @@
-<view class="movie-container" wx:for="{{movieList}}" wx:key="id">
+<view class="movie-container" wx:for="{{movieList}}" wx:key="index">
     <image class="movie-img" src="{{item.src}}"></image>
     <view class="movie-info">
         <view class="movie-title">{{item.name}}</view>

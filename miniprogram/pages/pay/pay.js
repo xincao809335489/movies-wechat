@@ -1,29 +1,23 @@
-// pages/profile/profile.js
+// pages/pay/pay.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        img:'/images/wechat.png'
     },
-    onItemClick:function(e){
-        var target = '/pages/pay/pay?code=' + e.currentTarget.dataset.pay;
-        wx.navigateTo({
-          url: target
-        })
-    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
-    },
-    submit:function(){
-        const {isLogin} = this.data
+        var code = options.code;
         this.setData({
-            isLogin:!isLogin
+            img:'/images/'+ code + '.png'
         })
     },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -35,6 +29,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+
     },
 
     /**

@@ -1,29 +1,40 @@
-// pages/profile/profile.js
+/*
+ * @Author: your name
+ * @Date: 2021-11-10 17:05:48
+ * @LastEditTime: 2021-11-11 19:51:23
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \miniprogram-movie\miniprogram\pages\index\index.js
+ */
+// pages/index/index.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        movies:[
+            {url:'/images/01.JPG'},  
+            {url:'/images/02.JPG'},
+            {url:'/images/03.JPG'},  
+            {url:'/images/04.JPG'},
+            {url:'/images/05.JPG'}
+        ],
+        movieGroup:[
+            {
+                title:'历史记录',
+                data:['']
+            }
+        ]
     },
-    onItemClick:function(e){
-        var target = '/pages/pay/pay?code=' + e.currentTarget.dataset.pay;
-        wx.navigateTo({
-          url: target
-        })
-    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
+
     },
-    submit:function(){
-        const {isLogin} = this.data
-        this.setData({
-            isLogin:!isLogin
-        })
-    },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -35,6 +46,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+
     },
 
     /**

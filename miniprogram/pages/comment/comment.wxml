@@ -22,7 +22,7 @@
             bind:change="onContentChange"
         />
         <view class="imgShow">图片展示:</view>
-        <van-uploader class="upload" multiple="true" deletable="{{true}}" file-list="{{ fileList }}" bind:after-read="upload"  max-count="3"/>
+        <van-uploader class="upload" multiple="true"  mode="center" deletable="{{true}}" file-list="{{ fileList }}" bind:after-read="upload"  max-count="3"/>
         <van-button type="info" size="medium" bindtap="submit" block class="submit">提交评价</van-button>
     </view>
 </view>

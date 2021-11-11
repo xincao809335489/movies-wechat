@@ -19,7 +19,7 @@ let lists = Mock.mock({
         "id|+1": 0,
         "desc|+1": ['台湾平凡的一家人的生活','大陆文艺片','灵魂与现实的紧张','1937年淞沪会战一役','马来西亚移居新加坡的生活'],
         "score|+1": ['3','5','4','6','7'],
-        "src|+1": ['https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg', 'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg', 'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg', 'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg']
+        "src|+1": ['https://z3.ax1x.com/2021/11/11/I0Apm6.jpg', 'https://z3.ax1x.com/2021/11/11/I0A90K.jpg', 'https://z3.ax1x.com/2021/11/11/I0AFte.jpg', 'https://z3.ax1x.com/2021/11/11/I0AikD.jpg','https://z3.ax1x.com/2021/11/11/I0ACTO.jpg']
     }]
 })
 //处理跨域

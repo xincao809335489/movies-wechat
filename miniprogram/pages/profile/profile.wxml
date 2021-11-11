@@ -1,2 +1,16 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class="container" style="background-image: url(/images/profileBanner.jpg);">
+    <view class="header-info">
+        <open-data type="userAvatarUrl" class="avatar"></open-data>
+        <open-data type="userNickName" class="name"></open-data>
+    </view>
+    <view class="section">
+        <view class="item" data-pay="wechat" bindtap="onItemClick">
+            <image src="/images/pay_wx.png" class="icon"></image>
+            <text class="pay-text">支持</text>
+        </view>
+        <view class="item" data-pay="alipay" bindtap="onItemClick">
+            <image src="/images/pay_zhifubao.png" class="icon"></image>
+            <text class="pay-text">支持</text>
+        </view>
+    </view>
+</view>

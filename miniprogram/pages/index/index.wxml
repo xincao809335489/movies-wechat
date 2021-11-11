@@ -1,0 +1,16 @@
+<view class="container">
+    <swiper class="swiper" circular="true" current="0" indicator-dots="true" autoplay="{{true}}" interval="2000" duration="1000">
+        <block wx:for="{{movies}}" wx:key="index">
+            <swiper-item>
+                <image src="{{item.url}}" class="slide-image" mode="aspectFill"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="section">
+        <van-cell-group title="{{item.title}}" wx:for="{{movieGroup}}" wx:key="index" class="movie-item">
+            <van-cell>
+                
+            </van-cell>
+        </van-cell-group>
+    </view>
+</view>

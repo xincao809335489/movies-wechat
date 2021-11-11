@@ -1,0 +1,3 @@
+<view class="container">
+    <image src="{{img}}" class="pay" mode="aspectFill"></image>
+</view>
