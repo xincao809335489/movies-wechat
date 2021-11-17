@@ -1,4 +1,6 @@
 // pages/movie/movie.js
+//引入支持async、await语法
+import regeneratorRuntime from 'regenerator-runtime'
 Page({
 
     /**
@@ -8,31 +10,40 @@ Page({
         movieList:[],
         pageIndex:0,
         pageSize:10,
-        total:0
+        total:0,
+        isDownRefresh:false
     },
     /**
      * 获取列表
      */
     getMovieList:function(){
-        wx.showLoading({
-            title: '加载中',
-          })
-        wx.cloud.callFunction({
-            name:'movielist',
-            data:{
-                pageIndex:this.data.pageIndex,
-                pageSize:this.data.pageSize
-            }
-        }).then(res=>{
-            console.log(res)
-            this.setData({
-                movieList:this.data.movieList.concat(res.result.data),
-                total:res.result.total
-            });
-            wx.hideLoading()
-        }).catch(err=>{
-            console.log(err)
-            wx.hideLoading()
+        const {isDownRefresh} = this.data;
+        if(!isDownRefresh){
+            wx.showLoading({
+                title: '加载中',
+            })
+        }else{
+            this.data.pageIndex = 0;
+        }
+        return new Promise((resolve,reject) => {
+            wx.cloud.callFunction({
+                name:'movielist',
+                data:{
+                    pageIndex:this.data.pageIndex,
+                    pageSize:this.data.pageSize
+                }
+            }).then(res=>{
+                console.log(res)
+                this.setData({
+                    movieList:isDownRefresh?res.result.data:this.data.movieList.concat(res.result.data),
+                    total:res.result.total
+                });
+                wx.hideLoading()
+                resolve();
+            }).catch(err=>{
+                console.log(err)
+                wx.hideLoading()
+            })
         })
     },
     gotoComment:function(event){
@@ -47,6 +58,7 @@ Page({
      */
     onLoad: function (options) {
         //获取电影列表数据
+        this.data.isDownRefresh = false;
         this.getMovieList();
     },
 
@@ -82,8 +94,10 @@ Page({
     /**
      * 页面相关事件处理函数--监听用户下拉动作
      */
-    onPullDownRefresh: function () {
-
+    onPullDownRefresh: async function () {
+        this.data.isDownRefresh = true;
+        await this.getMovieList();
+        wx.stopPullDownRefresh();
     },
 
     /**
@@ -92,6 +106,7 @@ Page({
     onReachBottom: function () {
        this.data.pageIndex++;
        if(this.data.movieList.length>=this.data.total) return;
+       this.data.isDownRefresh = false;
        this.getMovieList();
     },
 

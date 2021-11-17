@@ -5,5 +5,5 @@
     "van-button": "@vant/weapp/button/index",
     "van-uploader": "@vant/weapp/uploader/index"
   },
-  "navigationBarTitleText": "电影详情"
+  "navigationBarTitleText": "电影评价"
 }

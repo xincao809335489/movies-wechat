@@ -5,10 +5,8 @@
         <view class="movie-desc">{{item.desc}}</view>
         <view>观众评分：</view>
         <view class="movie-score">
-            <van-rate readonly value="{{ item.score }}" size="{{ 16 }}" void-icon="star"
-  void-color="#eee" color="#ffd21e"/>
+            <van-rate readonly value="{{ item.score }}" size="{{ 16 }}" void-icon="star" void-color="#eee" color="#ffd21e" />
             <van-button type="danger" size="mini" class="movie-btn" bindtap="gotoComment" data-name="{{item.name}}">评价</van-button>
         </view>
-        
     </view>
 </view>

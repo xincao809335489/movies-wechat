@@ -4,6 +4,8 @@
     "van-button": "@vant/weapp/button/index"
   },
   "navigationBarTitleText": "个人中心",
+  "enablePullDownRefresh": true,
   "navigationBarBackgroundColor":"#A7B6B5",
-  "backgroundTextStyle": "dark"
+  "backgroundTextStyle": "dark",
+  "backgroundColor": "#A7B6B5"
 }

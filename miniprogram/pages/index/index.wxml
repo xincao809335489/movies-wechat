@@ -1,7 +1,7 @@
 <view class="container">
     <swiper class="swiper" circular="true" current="0" indicator-dots="true" autoplay="{{true}}" interval="2000" duration="1000">
         <block wx:for="{{movies}}" wx:key="index">
-            <swiper-item>
+            <swiper-item bindtap="goDetail(item.name)">
                 <image src="{{item.url}}" class="slide-image" mode="aspectFill"></image>
             </swiper-item>
         </block>

@@ -1,23 +1,11 @@
-// pages/index/index.js
+// pages/detail/detail.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        movies:[
-            {url:'/images/01.JPG'},  
-            {url:'/images/02.JPG'},
-            {url:'/images/03.JPG'},  
-            {url:'/images/04.JPG'},
-            {url:'/images/05.JPG'}
-        ],
-        movieGroup:[
-            {
-                title:'历史记录',
-                data:['']
-            }
-        ]
+
     },
 
     /**
@@ -59,7 +47,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-       
+
     },
 
     /**
