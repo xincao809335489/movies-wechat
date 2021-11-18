@@ -1,0 +1,11 @@
+<template name="panel">
+    <view class="section">
+        <text class="title">{{name}}--评论</text>
+        <block wx:for="{{comments}}" wx:for-item="item" wx:for-index="idx" wx:key="idx">
+            <view class="comment">
+                <text class="author" style="background:url(/images/avatar.png) left center no-repeat">{{item.author}}</text>
+                <text class="content">{{item.content}}</text>
+            </view>
+        </block>
+    </view>
+</template>

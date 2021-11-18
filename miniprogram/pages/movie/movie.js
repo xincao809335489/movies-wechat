@@ -49,7 +49,7 @@ Page({
     gotoComment:function(event){
         const name = event.currentTarget.dataset.name;
         wx.navigateTo({
-          url: '../comment/comment?name=' + name,
+          url: '../comment/comment?name=' + name
         })
     },
 

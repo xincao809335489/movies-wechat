@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const Mock = require('mockjs')
 let detailData = require('./data/detail.json') //引入详情页的数据
+let commentData = require('./data/comment.json') //引入电影评论
 let app = express()
 //设置允许跨域访问该服务.
 app.all('*', function (req, res, next) {
@@ -63,6 +64,14 @@ app.post('/getMoviesDetail',function(req,res){
         obj
     }))
     
+})
+app.post('/getMovieComments',function(req,res){
+    const {index} = req.body
+    const data = commentData.data[index]
+    res.json(Mock.mock({
+        'status':200,
+        data
+    }))
 })
 function updateList(score,name,content){
     lists.data.map(item=>{

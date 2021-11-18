@@ -1,4 +1,8 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "电影详情"
+  "usingComponents": {
+    "van-notice-bar": "@vant/weapp/notice-bar/index"
+  },
+  "navigationBarTitleText": "电影详情",
+  "navigationBarBackgroundColor": "#2E2E2E",
+  "navigationBarTextStyle": "white"
 }

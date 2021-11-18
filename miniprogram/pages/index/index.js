@@ -1,4 +1,3 @@
-// pages/index/index.js
 Page({
 
     /**
@@ -15,16 +14,20 @@ Page({
         movieGroup:[
             {
                 title:'历史记录',
-                data:['']
+                
             }
         ]
     },
-
+    goDetail:function(event){
+        const idx = event.currentTarget.dataset.index;
+        wx.navigateTo({
+          url: '../detail/detail?index=' + idx
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
     },
 
     /**

@@ -1,0 +1,36 @@
+.section{
+    width: 100%;
+    position: relative;
+    padding:2px 0;
+    box-sizing: border-box;
+}
+.comment{
+    font-size: 12px;
+    width: 95%;
+    margin: 10px auto;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 8px;
+}
+.title{
+    margin-left: 22px;
+    font-size: 13px;
+}
+.section::before{
+    content: '|';
+    position: absolute;
+    left: 9px;
+    top: 5%;
+    transform: translateY(-61%);
+    color: #FFB13D;
+}
+.author{
+    padding-left:21px;
+}
+.content{
+    display: block;
+    line-height: 1.6;
+    margin-top: 7px;
+    color: #969799;
+}

@@ -1,1 +1,4 @@
-/* pages/detail/detail.wxss */
+@import "../../template/template.wxss";
+.banner,.text{
+    width:100%;
+}

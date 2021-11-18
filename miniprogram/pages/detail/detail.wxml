@@ -1,2 +1,6 @@
-<!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<import src="../../template/template.wxml" />
+<view class="container">
+    <image mode="scaleToFill" src="{{detail.currentImg}}" class="banner"></image>
+    <van-notice-bar left-icon="volume-o" text="{{detail.currentDescribe}}" color="#000000" background="#ffffff" class="text"/>
+    <template is="panel" data="{{...detail}}"></template>
+</view>
