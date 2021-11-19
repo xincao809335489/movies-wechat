@@ -1,0 +1,3 @@
+<view class="container">
+    <ec-canvas id="echarts-line" canvas-id="echarts-line" ec="{{ ec }}"></ec-canvas>
+</view>

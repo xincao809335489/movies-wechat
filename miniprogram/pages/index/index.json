@@ -1,9 +1,11 @@
 {
   "usingComponents": {
     "van-cell": "@vant/weapp/cell/index",
-    "van-cell-group": "@vant/weapp/cell-group/index"
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index"
   },
-  "navigationBarBackgroundColor":"#2E2E2E",
+  "navigationBarBackgroundColor": "#2E2E2E",
   "navigationBarTextStyle": "white",
   "backgroundTextStyle": "light"
 }

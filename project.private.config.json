@@ -59,6 +59,12 @@
                     "pathName": "pages/updateRecordSuccess/index",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "statistics",
+                    "pathName": "pages/statistics/statistics",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

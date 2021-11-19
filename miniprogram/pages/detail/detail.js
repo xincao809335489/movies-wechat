@@ -72,7 +72,7 @@ Page({
         console.log(res)
         const data = res.result.data;
         this.setData({
-          ['detail.comments']:data
+          'detail.comments':data
         })
     })
   },

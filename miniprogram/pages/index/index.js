@@ -10,12 +10,6 @@ Page({
             {url:'/images/03.JPG'},  
             {url:'/images/04.JPG'},
             {url:'/images/05.JPG'}
-        ],
-        movieGroup:[
-            {
-                title:'历史记录',
-                
-            }
         ]
     },
     goDetail:function(event){

@@ -1,0 +1,10 @@
+.container {
+  width: 100%;
+  height: 300px;
+}
+#echarts-line {
+    position: relative;
+    top:20px;
+    width:90%;
+    height:100%;
+}

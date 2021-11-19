@@ -6,11 +6,4 @@
             </swiper-item>
         </block>
     </swiper>
-    <view class="section">
-        <van-cell-group title="{{item.title}}" wx:for="{{movieGroup}}" wx:key="index" class="movie-item">
-            <van-cell>
-                
-            </van-cell>
-        </van-cell-group>
-    </view>
 </view>
